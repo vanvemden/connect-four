@@ -72,17 +72,22 @@ function findSpotForCol(x) {
 function placeInTable(y, x) {
   let td = document.getElementById(`${ y }-${ x }`);
   let div = document.createElement("div");
-  div.classList.add("piece", `piece-player-${ currPlayer }`);
- 
-  
-  
+  div.classList.add("piece", `piece-player-${ currPlayer }`); 
   td.appendChild(div);
-
+  div.animate(
+    [ { top: 0} , { top: `${ y * 40 }px` } ],
+    { duration: 100 + (y * 50) }
+  )
 }
 
 /** endGame: announce game end */
 function endGame(msg) {
-  setTimeout(() => alert(msg));
+  setTimeout(() => {
+    alert(msg)
+    // Start new game
+    location.reload()
+  }
+  , 1000);
 }
 
 /** handleClick: handle click of column top to play piece */
