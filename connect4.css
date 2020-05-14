@@ -11,14 +11,28 @@
 .piece {
   /* TODO: make into circles */
   margin: 5px;
-  width: 80%;
-  height: 80%;
+  width: 40px;
+  height: 40px;
   border-radius: 20px;
+  animation-name: drop;
+  animation-duration: 3s;
+  position: absolute;
+  animation-fill-mode: forwards;
+
+
+  
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 .piece-player-1 {
   background-color: blue;
+  
+}
+
+@keyframes drop{
+  0% {background-color: yellow; top: 15px;}
+  100% {background-color: blue; top: 348px;}
+  
 }
 
 .piece-player-2 {
